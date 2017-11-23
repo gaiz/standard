@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+## Standard Microsoft .NET Repository
 
-You can use the [editor on GitHub](https://github.com/gaiz/standard/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This document provides information about Repository for work project which consists of client applications and/or server applications.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#### Work project
+Project for customer, internal or partner -- Not to be confused with .NET project (e.g. `*.csproj`).
 
-### Markdown
+#### Client Application
+An application that run on user's device. Some client application is able to connect to database directly (e.g. Microsoft SQL Server) such as Database client, Redis client, etc.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Server Application
+An application that run on server, it is updated and deployed by development team. Server application provides data for client application. However, Some server application is able to work as client and access to other services.
 
-```markdown
-Syntax highlighted code block
+### .NET Solution Structure
+- Client -- Folder that holds all files/projects for client application/library. Library in this folder use for client only. 
+  - **[Owner]**.Client -- Library for every client applications (Mobile, Windows Application i.e. WPF) and not depend on any client platforms ex. Library for auto update.
+  - **[Owner]**.Mobile -- Library for mobile application based on Xamarin project
+    - **[Owner]**.Mobile -- Xamarin Portable Class Library (PCL) to share code across platforms
+    - **[Owner]**.Mobile.Android -- Xamarin Android
+    - **[Owner]**.Mobile.iOS -- Xamarin iOS
+    - **[Owner]**.Mobile.UWP -- Xamarin UWP
+  - **[Owner]**.Wpf -- Library for WPF application
+  - **[Owner]**.**[AppName]** -- Client application
+  - **[Owner]**.**[Mobile AppName]** -- Mobile application based on Xamarin Project
+    - **[Owner]**.**[Mobile AppName]**
+    - **[Owner]**.**[Mobile AppName]**.Android
+    - **[Owner]**.**[Mobile AppName]**.iOS
+    - **[Owner]**.**[Mobile AppName]**.UWP
+- Core -- Folder that holds all files/projects for client/server library.
+  - **[Owner]**.Core -- Library for client/server (Owner's library and able to share with other work projects)
+  - **[Owner]**.**[Solution Name]** -- Business library for solution
+  - **[Owner]**.**[AppName]** *(optional)* -- Business library for application if it use in application only.
+- Documentation -- All documents
+- Server -- Folder that holds all files/projects for server application/library. Application maybe Web Application, Job Scheduler, Long-run process, etc.
+- Tests
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gaiz/standard/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Note:
+- **[Owner]** is name of owner code, it can be Company Name, Organization Name, Author or Employer.
+- **[AppName]** and **[Mobile AppName]** can be solution name if solution has only one application on server/client.
+- Folder name is not contain **[Mobile AppName]**, **[Solution Name]** is owner's level and can be use in other work projects.
