@@ -25,7 +25,7 @@ Solution structure consists of 2 logical parts, but physical path is the same fo
     - `[Owner].Mobile.iOS` -- Xamarin iOS application.
     - `[Owner].Mobile.UWP` -- Xamarin UWP application.
   - `[Owner].Wpf` -- Library for WPF application.
-- `Core` -- Folder to store all files/projects for client library.
+- `Core` -- Folder to store all files/projects for client/server library.
   - `[Owner].Core` -- Library for client/server.
   - `[Owner].[Module]` -- Other libraries for client/server ex. `[Owner].Net`.
 - `Server` -- Folder to store all files/projects for server library.
