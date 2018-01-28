@@ -58,7 +58,7 @@ Solution structure consists of 2 logical parts, but physical path is the same fo
 - `[Solution Name].Server.sln` -- Solution contains all server and core projects.
 
 #### Note:
-- `[Owner]` is name of owner work project, it can be Company Name, Organization Name, Author or Employer.
-- `[AppName]` and `[Mobile AppName]` can be solution name if solution has only one application on server/client.
+- `[Owner]` is name of owner work project, it can be Company Name, Organization Name, Author or Employer. Use *Zendrix* as `[Owner]` in the example solution.
+- `[AppName]` and `[Mobile AppName]` can be solution name if solution has only one application on server/client. Use *Zeus* as `[AppName]` in the example solution.
 - In Client, `[AppName]` suffix is *App*, `[Mobile AppName]` suffix is *Mobile*.
 - Folder name is not contain `[Mobile AppName]`, `[Solution Name]` is owner's level and can be used in other work projects.
